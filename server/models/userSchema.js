@@ -11,3 +11,5 @@ var UserSchema = new mongoose.Schema({
 		updatedAt: 'updated_at'
 	}
 });
+
+module.exports = UserSchema;
