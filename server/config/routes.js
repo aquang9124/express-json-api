@@ -12,12 +12,21 @@ let router = express.Router();
 
 // implement route handlers
 let users = {
-	index(req, res) {
-		let userArr = [
-			{name: 'Alex', specialty: 'programming'},
-			{name: 'The Rock', specialty: 'acting'}
-		];
-		res.json(userArr[req.params.id]);
+	retrieve(req, res) {
+		User.find({email: req.body.email}, function(err, user) {
+			if (err) {
+				res.json({ERROR: new Error(err)});
+			}
+			else {
+				bcrypt.compare('qqhappyfam1', user.password)
+					.then(function() {
+						res.json({SUCCESS: user});
+					})
+					.catch(function(err) {
+						res.json({ERROR: new Error(err)});
+					});
+			}
+		});
 	},
 	add(req, res) {
 		bcrypt.hash(req.body.password, 10)
@@ -44,7 +53,7 @@ let users = {
 };
 
 // API routes
-router.get('/api/user/:id', users.index);
+router.post('/api/user', users.retrieve);
 router.post('/api/users', users.add);
 
 module.exports = router;
