@@ -18,9 +18,9 @@ let users = {
 				res.json({ERROR: new Error(err)});
 			}
 			else {
-				bcrypt.compare('qqhappyfam1', user.password)
+				bcrypt.compare('qqhappyfam1', user[0].password)
 					.then(function() {
-						res.json({SUCCESS: user});
+						res.json({SUCCESS: user[0]});
 					})
 					.catch(function(err) {
 						res.json({ERROR: new Error(err)});

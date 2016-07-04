@@ -34,8 +34,8 @@ describe('Users', function() {
 		bcrypt.hash('qqhappyfam1', 10)
 			.then(function(hashedPW) {
 				var newUser = new User({
-					username: 'aquang0',
-					email: 'aquang0@gmail.com',
+					username: 'aquang1',
+					email: 'aquang1@gmail.com',
 					password: hashedPW
 				});
 				newUser.save(function(err, data) {
@@ -45,6 +45,14 @@ describe('Users', function() {
 						.end(function(err, res) {
 							res.should.have.status(200);
 							res.should.be.json;
+							res.body.should.be.a('object');
+							res.body.should.have.property('SUCCESS');
+							res.body.SUCCESS.should.be.a('object');
+							res.body.SUCCESS.should.have.property('username');
+							res.body.SUCCESS.should.have.property('email');
+							res.body.SUCCESS.should.have.property('password');
+							res.body.SUCCESS.should.have.property('_id');
+							res.body.SUCCESS.username.should.equal(data.username);
 							done();
 						});
 				});
