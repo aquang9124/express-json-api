@@ -4,7 +4,7 @@ This is a web application designed to help users plan parties more efficiently.
 
 ## Usage
 
-This app is still under development and as such are currently no usage details.
+This app is still under development and as such there are currently no usage details.
 
 ## Technologies
 - EmberJS Frontend
