@@ -4,4 +4,4 @@ This is a Restful Node/Express API that I made so I could quickly add a backend 
 
 ## Usage
 
-It is test-proven for a few features and will be useful for my feature projects.
+It passes all of the tests given and will be useful for quick implementation of log in and registration features.
