@@ -1,11 +1,7 @@
-# Party Planner
+# API
 
-This is a web application designed to help users plan parties more efficiently.
+This is a Restful Node/Express API that I made so I could quickly add a backend to my apps.
 
 ## Usage
 
-This app is still under development and as such there are currently no usage details.
-
-## Technologies
-- EmberJS Frontend
-- Node/Express Backend
+It is test-proven for a few features and will be useful for my feature projects.
