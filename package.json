@@ -1,7 +1,7 @@
 {
-  "name": "ember-node",
+  "name": "node-app-b",
   "version": "1.0.0",
-  "description": "Node backend for EmberJs App",
+  "description": "Node backend",
   "main": "server.js",
   "directories": {
     "test": "test"
